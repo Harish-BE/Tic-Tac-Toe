@@ -13,10 +13,12 @@ function checkWin(){
     for(var i=0;i<=7;i++){
         if(wincheck[win[i][0]]==1 & wincheck[win[i][1]]==1 & wincheck[win[i][2]]==1){
            // console.log("0 is winner");
-            document.getElementById("win").innerHTML="winner 0";
+           document.getElementById("win").style.color="#A6D0DD";
+            document.getElementById("win").innerHTML="winner o";
         }
         if(wincheck[win[i][0]]==2 & wincheck[win[i][1]]==2 & wincheck[win[i][2]]==2){
             //console.log("x is winner");
+            document.getElementById("win").style.color="#FF6969";
             document.getElementById("win").innerHTML="winner x";
         }
     }
@@ -29,11 +31,13 @@ function draw(){
     if(overwite[this.id]==0){
         if(state==0){
         this.innerHTML="o";
+        this.style.color="#A6D0DD";
         state=1;
         wincheck[this.id]=1;
         }
         else{
             this.innerHTML="x";
+            this.style.color="#FF6969";
             state=0;
             wincheck[this.id]=2;
             }
